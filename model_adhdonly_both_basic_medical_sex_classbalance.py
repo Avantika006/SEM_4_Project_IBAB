@@ -283,8 +283,8 @@ for fold, (train_index, test_index) in enumerate(kf.split(X, y), 1):
 
     # Adjust indices for 4 classes (0, 1, 2, 3)
     TP = conf_matrix[0, 0].sum()  # True Positives across all classes
-    FP = conf_matrix[1:, 0].sum()  # False Positives
-    FN = conf_matrix[0, 1:].sum()  # False Negatives
+    FN = conf_matrix[1:, 0].sum()  # False Positives
+    FP = conf_matrix[0, 1:].sum()  # False Negatives
     TN = conf_matrix[1:, 1:].sum()  # True Negatives
 
     sens = TP / (TP + FN)
